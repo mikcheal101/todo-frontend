@@ -7,6 +7,7 @@ import {
   faSearch,
   faHamburger,
 } from "@fortawesome/free-solid-svg-icons";
+import Swal from "sweetalert2";
 
 class StateManger {}
 
@@ -21,6 +22,24 @@ class Home extends React.Component {
     // set the state
   };
 
+  openNewListForm = () => {
+    Swal.fire({
+      icon: "info",
+      title: "Create a new List:",
+      input: "text",
+      showCancelButton: true,
+    }).then((result) => {
+      if (result.value) {
+        // send data to backend
+        Swal.fire({
+          icon: "success",
+          text: "Your list has been created!",
+          title: "List Created!",
+        });
+      }
+    });
+  };
+
   render = () => {
     return (
       <>
@@ -28,9 +47,12 @@ class Home extends React.Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="btn btn-secondary btn-sm" to="#">
+                <button
+                  className="btn btn-secondary btn-sm"
+                  onClick={this.openNewListForm}
+                >
                   New List
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -63,75 +85,55 @@ class Home extends React.Component {
 
         <hr className="m-2" />
         {/* cards containing items */}
-        <div className="row">
-          <div className="col-lg-3 col-md-4 col-xs-6 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <h6>No Tasks</h6>
-              </div>
-              <div className="card-footer">
-                <strong>Personal</strong>
-                <p className="m-0 text-muted">
-                  <small>On this computer</small>
-                </p>
-              </div>
+        <div class="card-deck">
+          <div className="card">
+            <div className="card-body">
+              <h6>No Tasks</h6>
+            </div>
+            <div className="card-footer">
+              <strong>Personal</strong>
+              <p className="m-0 text-muted">
+                <small>On this computer</small>
+              </p>
             </div>
           </div>
-          <div className="col-lg-3 col-md-4 col-xs-6 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <ul>
-                  <li>item 1</li>
-                  <li>item 2</li>
-                  <li>item 3</li>
-                  <li>item 4</li>
-                </ul>
-              </div>
-              <div className="card-footer">
-                <strong>Personal</strong>
-                <p className="m-0 text-muted">
-                  <small>On this computer</small>
-                </p>
-              </div>
+
+          <div className="card">
+            <div className="card-body">
+              <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+                <li>item 4</li>
+              </ul>
+            </div>
+            <div className="card-footer">
+              <strong>Personal</strong>
+              <p className="m-0 text-muted">
+                <small>On this computer</small>
+              </p>
             </div>
           </div>
-          <div className="col-lg-3 col-md-4 col-xs-6 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <h6>No Tasks</h6>
-              </div>
-              <div className="card-footer">
-                <strong>Personal</strong>
-                <p className="m-0 text-muted">
-                  <small>On this computer</small>
-                </p>
-              </div>
+          <div className="card">
+            <div className="card-body">
+              <h6>No Tasks</h6>
+            </div>
+            <div className="card-footer">
+              <strong>Personal</strong>
+              <p className="m-0 text-muted">
+                <small>On this computer</small>
+              </p>
             </div>
           </div>
-          <div className="col-lg-3 col-md-4 col-xs-6 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <h6>No Tasks</h6>
-              </div>
-              <div className="card-footer">
-                <strong>Personal</strong>
-                <p className="m-0 text-muted">
-                  <small>On this computer</small>
-                </p>
-              </div>
+          <div className="card">
+            <div className="card-body">
+              <h6>No Tasks</h6>
             </div>
-          </div>
-          <div className="col-lg-3 col-md-4 col-xs-6 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <h6>No Tasks</h6>
-              </div>
-              <div className="card-footer">
-                <strong>Personal</strong>
-                <p className="m-0 text-muted">
-                  <small>On this computer</small>
-                </p>
-              </div>
+            <div className="card-footer">
+              <strong>Personal</strong>
+              <p className="m-0 text-muted">
+                <small>On this computer</small>
+              </p>
             </div>
           </div>
         </div>
