@@ -1,18 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faList,
-  faCheck,
-  faSearch,
-  faHamburger,
-} from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
+import HomeNavbar from "../Navigation/HomeNavbar";
 
-class StateManger {}
+class StateManager {}
 
 class Home extends React.Component {
-  state = new StateManger();
+  state = new StateManager();
 
   constructor(props) {
     super(props);
@@ -43,46 +36,7 @@ class Home extends React.Component {
   render = () => {
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <button
-                  className="btn btn-secondary btn-sm"
-                  onClick={this.openNewListForm}
-                >
-                  New List
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link className="btn btn-light mr-2 btn-sm" to="#">
-                  <FontAwesomeIcon icon={faList} />
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="btn btn-light mr-2 btn-sm" to="#">
-                  <FontAwesomeIcon icon={faCheck} />
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="btn btn-light mr-2 btn-sm" to="#">
-                  <FontAwesomeIcon icon={faSearch} />
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="btn btn-light mr-2 btn-sm" to="#">
-                  <FontAwesomeIcon icon={faHamburger} />
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
+        <HomeNavbar />
         <hr className="m-2" />
         {/* cards containing items */}
         <div class="card-deck">
