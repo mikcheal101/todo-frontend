@@ -1,10 +1,6 @@
 import React, { Fragment } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDown,
-  faAngleUp
-} from "@fortawesome/free-solid-svg-icons";
 import AppNavbar from "../Navigation/AppNavbar";
+import { Accordion, Card, Form, Button, Col } from 'react-bootstrap';
 
 class StateManager {}
 
@@ -23,154 +19,80 @@ class TodoDetail extends React.Component {
         return (
             <Fragment>
                 <AppNavbar />
-                <div className="accordion vertical">
-                    <ul>
-                        <li className="card">
-                            <input className="box" type="checkbox" id="checkbox-1" name="checkbox-accordion" />
-                            <label className="list-label" htmlFor="checkbox-1">
-                                <input type="checkbox" />
-                                Title&nbsp;One
-                                <FontAwesomeIcon icon={faAngleDown} />
-                                <FontAwesomeIcon icon={faAngleUp} />
-                            </label>
-                            <div className="content">
-                                <form>
-                                    <div className="form-row">
-                                        <div className="form-group col-md-6">
-                                            <label htmlFor="inputEmail4">Notes</label>
-                                            <textarea className="form-control" rows="5"></textarea>
-                                        </div>
-                                        <div className="form-row col-md-6">
-                                            <div className="form-group col-md-12">
-                                                <label htmlFor="inputState">Priority</label>
-                                                <select id="inputState" className="form-control">
-                                                    <option selected>High</option>
+                <Accordion defaultActiveKey="0" style={{ marginTop: "10px" }}>
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                            <Form.Check type="checkbox" label="Check me out" className="open-accordion"/>
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+                                <Form>
+                                    <Form.Row>
+                                        <Form.Group as={Col} controlId="exampleForm.ControlTextarea1" xs={7}>
+                                            <Form.Label>Notes</Form.Label>
+                                            <Form.Control as="textarea" rows="5" />
+                                        </Form.Group>
+                                        <Form.Row as={Col}>
+                                            <Form.Group as={Col} controlId="formGridState" xs={12}>
+                                                <Form.Label>State</Form.Label>
+                                                <Form.Control as="select" defaultValue="Choose...">
+                                                    <option>Choose...</option>
                                                     <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group col-md-12">
-                                                <label htmlFor="inputState">Priority</label>
-                                                <select id="inputState" className="form-control">
-                                                    <option selected>High</option>
+                                                </Form.Control>
+                                            </Form.Group>
+                                            <Form.Group as={Col} controlId="formGridState" xs={12}>
+                                                <Form.Label>State</Form.Label>
+                                                <Form.Control as="select" defaultValue="Choose...">
+                                                    <option>Choose...</option>
                                                     <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" className="btn btn-danger" style={{ float: "right" }}>Delete</button>
-                                </form>
-                            </div>
-                        </li>
-                        <li className="card">
-                            <input className="box" type="checkbox" id="checkbox-2" name="checkbox-accordion" />
-                            <label className="list-label" htmlFor="checkbox-2">
-                                <input type="checkbox" />
-                                Title&nbsp;Two
-                                <FontAwesomeIcon icon={faAngleDown} />
-                                <FontAwesomeIcon icon={faAngleUp} />
-                            </label>
-                            <div className="content">
-                                <form>
-                                    <div className="form-row">
-                                        <div className="form-group col-md-6">
-                                            <label htmlFor="inputEmail4">Notes</label>
-                                            <textarea className="form-control"></textarea>
-                                        </div>
-                                        <div className="form-row col-md-6">
-                                            <div className="form-group col-md-12">
-                                                <label htmlFor="inputState">Priority</label>
-                                                <select id="inputState" className="form-control">
-                                                    <option selected>High</option>
+                                                </Form.Control>
+                                            </Form.Group>
+                                            <Button variant="primary" type="submit" className="offset-9">
+                                                Submit
+                                            </Button>
+                                        </Form.Row>
+                                    </Form.Row>
+                                </Form>
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="1">
+                            <Form.Check type="checkbox" label="Check me out" className="open-accordion"/>
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="1">
+                            <Card.Body>
+                                <Form>
+                                    <Form.Row>
+                                        <Form.Group as={Col} controlId="exampleForm.ControlTextarea1" xs={7}>
+                                            <Form.Label>Notes</Form.Label>
+                                            <Form.Control as="textarea" rows="5" />
+                                        </Form.Group>
+                                        <Form.Row as={Col}>
+                                            <Form.Group as={Col} controlId="formGridState" xs={12}>
+                                                <Form.Label>State</Form.Label>
+                                                <Form.Control as="select" defaultValue="Choose...">
+                                                    <option>Choose...</option>
                                                     <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group col-md-12">
-                                                <label htmlFor="inputState">Priority</label>
-                                                <select id="inputState" className="form-control">
-                                                    <option selected>High</option>
+                                                </Form.Control>
+                                            </Form.Group>
+                                            <Form.Group as={Col} controlId="formGridState" xs={12}>
+                                                <Form.Label>State</Form.Label>
+                                                <Form.Control as="select" defaultValue="Choose...">
+                                                    <option>Choose...</option>
                                                     <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" className="btn btn-danger" style={{ float: "right" }}>Delete</button>
-                                </form>
-                            </div>
-                        </li>
-                        <li className="card">
-                            <input className="box" type="checkbox" id="checkbox-3" name="checkbox-accordion" />
-                            <label className="list-label" htmlFor="checkbox-3">
-                                <input type="checkbox" />
-                                Title&nbsp;Three
-                                <FontAwesomeIcon icon={faAngleDown} />
-                                <FontAwesomeIcon icon={faAngleUp} />
-                            </label>
-                            <div className="content">
-                                <form>
-                                    <div className="form-row">
-                                        <div className="form-group col-md-6">
-                                            <label htmlFor="inputEmail4">Notes</label>
-                                            <textarea className="form-control"></textarea>
-                                        </div>
-                                        <div className="form-row col-md-6">
-                                            <div className="form-group col-md-12">
-                                                <label htmlFor="inputState">Priority</label>
-                                                <select id="inputState" className="form-control">
-                                                    <option selected>High</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group col-md-12">
-                                                <label htmlFor="inputState">Priority</label>
-                                                <select id="inputState" className="form-control">
-                                                    <option selected>High</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" className="btn btn-danger" style={{ float: "right" }}>Delete</button>
-                                </form>
-                            </div>
-                        </li>
-                        <li className="card">
-                            <input className="box" type="checkbox" id="checkbox-4" name="checkbox-accordion" />
-                            <label className="list-label" htmlFor="checkbox-4">
-                                <input type="checkbox" />
-                                Title&nbsp;Four
-                                <FontAwesomeIcon icon={faAngleDown} />
-                                <FontAwesomeIcon icon={faAngleUp} />
-                            </label>
-                            <div className="content">
-                                <form>
-                                    <div className="form-row">
-                                        <div className="form-group col-md-6">
-                                            <label htmlFor="inputEmail4">Notes</label>
-                                            <textarea className="form-control"></textarea>
-                                        </div>
-                                        <div className="form-row col-md-6">
-                                            <div className="form-group col-md-12">
-                                                <label htmlFor="inputState">Priority</label>
-                                                <select id="inputState" className="form-control">
-                                                    <option selected>High</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-group col-md-12">
-                                                <label htmlFor="inputState">Priority</label>
-                                                <select id="inputState" className="form-control">
-                                                    <option selected>High</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" className="btn btn-danger" style={{ float: "right" }}>Delete</button>
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                                                </Form.Control>
+                                            </Form.Group>
+                                            <Button variant="primary" type="submit" className="offset-9">
+                                                Submit
+                                            </Button>
+                                        </Form.Row>
+                                    </Form.Row>
+                                </Form>
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
             </Fragment>
         )
     };
