@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faList,
-  faCheck,
   faSearch,
-  faHamburger,
+  faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 class AppNavbar extends Component {
     render = () => {
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <button>Back</button>
+            <nav className="navbar navbar-expand-lg navbar-light grey">
+                <button className="back">
+                    <FontAwesomeIcon icon={faAngleLeft} />
+                </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{ position: "absolute",
                     margin: "auto",
                     right: "0",
@@ -35,26 +35,11 @@ class AppNavbar extends Component {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
-                        <Link className="btn btn-light mr-2 btn-sm" to="#">
-                        <FontAwesomeIcon icon={faList} />
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="btn btn-light mr-2 btn-sm" to="#">
-                        <FontAwesomeIcon icon={faCheck} />
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="btn btn-light mr-2 btn-sm" to="#">
-                        <FontAwesomeIcon icon={faSearch} />
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="btn btn-light mr-2 btn-sm" to="#">
-                        <FontAwesomeIcon icon={faHamburger} />
-                        </Link>
-                    </li>
+                        <li className="nav-item">
+                            <Link className="btn btn-light mr-2 btn-sm" to="#">
+                                <FontAwesomeIcon icon={faSearch} />
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </nav>
